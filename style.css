@@ -1,0 +1,317 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+th {
+    text-align: right;
+    vertical-align: top;
+    width: 30%;
+}
+
+h2,
+h3 {
+    color: #2d3e50;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: inline;
+}
+
+.jumbotron {
+    font-size: 20px;
+    padding: 60px;
+    background-color: #2d3e50;
+    text-align: center;
+    color: white;
+}
+
+nav ul {
+    padding-inline: 4rem;
+    display: flex;
+
+    gap: 2rem;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav {
+    background-color: #425c77;
+    padding: 5px;
+
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+
+    color: white;
+}
+
+nav a:hover {
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+
+    display: flex;
+    gap: 1.5rem;
+}
+
+#keterampilan ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+#keterampilan li {
+    display: flex;
+    justify-content: center;
+    /* Memusatkan item di dalam list */
+}
+
+.skill-item {
+    border: 2px solid #2d3e50;
+    /* Tambahkan border pada kotak */
+    padding: 15px;
+    /* Jarak dalam kotak */
+    display: flex;
+    flex-direction: column;
+    /* Membuat ikon dan teks dalam satu kolom */
+    align-items: center;
+    /* Memusatkan ikon dan teks secara horizontal */
+    text-align: center;
+    /* Pusatkan teks */
+    width: 100px;
+    /* Atur lebar kotak */
+    height: 120px;
+    color: white;
+    background-color: #2d3e50;
+    /* Warna background */
+    border-radius: 10px;
+    /* Membuat sudut kotak membulat (opsional) */
+}
+
+.skill-item:hover {
+    border: 3px solid #2d3e50;
+    background-color: transparent;
+    color: #2d3e50;
+}
+
+#keterampilan i {
+    font-size: 2rem;
+    /* Memperbesar ikon */
+}
+
+span {
+    margin-bottom: -10px;
+}
+
+#keterampilan p {
+    font-size: 1rem;
+    /* Ukuran teks */
+}
+
+/* Mengatur tata letak dasar untuk gallery-item */
+.container-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.gallery-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: lightgrey;
+}
+
+/* Untuk gallery-item ganjil, posisi gambar di kanan dan teks di kiri */
+.gallery-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+/* Untuk gallery-item genap, posisi gambar di kiri dan teks di kanan */
+.gallery-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Mengatur tampilan gambar */
+.featured-image {
+    width: 50%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Mengatur teks agar tidak melebihi setengah lebar card */
+.gallery-item .text {
+    width: 50%;
+}
+
+.profile header {
+    text-align: center;
+}
+
+.featured-image {
+    width: 100%;
+    max-height: 300px;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile img {
+    width: 200px;
+    border: 5px solid #2d3e50;
+}
+
+#profile {
+    max-width: 100%;
+    position: center;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+
+    padding: 20px;
+}
+
+#content {
+    flex: 3;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem 2rem;
+}
+
+#kontak {
+    margin-top: 20px;
+}
+
+aside {
+    flex: 1;
+
+}
+
+figure img {
+    border-radius: 99px;
+}
+
+.kontak ul {
+    list-style: none;
+    /* Menghilangkan bullet atau angka pada list */
+    display: flex;
+    /* Membuat elemen ul menjadi horizontal */
+    gap: 2rem;
+    /* Memberi jarak antar elemen */
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.kontak li {
+    display: inline;
+    /* Membuat elemen li sejajar secara horizontal */
+}
+
+.kontak a {
+    text-decoration: none;
+    /* Menghilangkan dekorasi link */
+    font-size: 1.5rem;
+    /* Memperbesar ukuran font */
+    color: inherit;
+    /* Warna mengikuti elemen induk */
+}
+
+.kontak i {
+    font-size: 3rem;
+    /* Memperbesar ikon jika ada */
+    margin-right: 10px;
+    /* Jarak antara ikon dan teks */
+    color: #2d3e50;
+}
+
+footer {
+    padding: 20px;
+    color: white;
+    background-color: #2d3e50;
+
+    text-align: center;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1200px) {
+    main {
+        flex-flow: column nowrap;
+    }
+
+    main aside {
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        justify-content: center;
+    }
+
+    main aside {
+        align-self: stretch;
+    }
+
+    .gallery-item {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .gallery-item .text,
+    .gallery-item .featured-image {
+        width: 100%;
+    }
+}
+
+/* Style for the To-Top Button */
+.to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Hidden by default */
+    background-color: #2d3e50; /* Same color as your theme */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+        font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Style the button on hover */
+.to-top-btn:hover {
+    background-color: #00a2c6; /* Change color on hover */
+}
