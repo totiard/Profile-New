@@ -5,15 +5,305 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Pribadi</title>
-    <link rel="stylesheet" href="style.css>
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/cfabe47e2b.js" crossorigin="anonymous"></script>
-    
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        th {
+            text-align: right;
+            vertical-align: top;
+            width: 30%;
+        }
+
+        h2,
+        h3 {
+            color: #2d3e50;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: inline;
+        }
+
+        .jumbotron {
+            font-size: 20px;
+            padding: 60px;
+            background-color: #2d3e50;
+            text-align: center;
+            color: white;
+        }
+
+        nav ul {
+            padding-inline: 4rem;
+            display: flex;
+
+            gap: 2rem;
+        }
+
+        nav li {
+            list-style-type: none;
+        }
+
+        nav {
+            background-color: #425c77;
+            padding: 5px;
+
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            font-size: 18px;
+            font-weight: 400;
+            text-decoration: none;
+
+            color: white;
+        }
+
+        nav a:hover {
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        #keterampilan ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+
+        #keterampilan li {
+            display: flex;
+            justify-content: center;
+        }
+
+        .skill-item {
+            border: 2px solid #2d3e50;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100px;
+            height: 120px;
+            color: white;
+            background-color: #2d3e50;
+            border-radius: 10px;
+        }
+
+        .skill-item:hover {
+            border: 3px solid #2d3e50;
+            background-color: transparent;
+            color: #2d3e50;
+        }
+
+        #keterampilan i {
+            font-size: 2rem;
+        }
+
+        span {
+            margin-bottom: -10px;
+        }
+
+        #keterampilan p {
+            font-size: 1rem;
+        }
+
+        .container-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: lightgrey;
+        }
+
+        .gallery-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .gallery-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .featured-image {
+            width: 50%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .gallery-item .text {
+            width: 50%;
+        }
+
+        .profile header {
+            text-align: center;
+        }
+
+        .featured-image {
+            width: 100%;
+            max-height: 300px;
+
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .profile img {
+            width: 200px;
+            border: 5px solid #2d3e50;
+        }
+
+        #profile {
+            max-width: 100%;
+            position: center;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+
+            padding: 20px;
+        }
+
+        #content {
+            flex: 3;
+
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 1rem 2rem;
+        }
+
+        #kontak {
+            margin-top: 20px;
+        }
+
+        aside {
+            flex: 1;
+
+        }
+
+        figure img {
+            border-radius: 99px;
+        }
+
+        .kontak ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .kontak li {
+            display: inline;
+        }
+
+        .kontak a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: inherit;
+        }
+
+        .kontak i {
+            font-size: 3rem;
+            margin-right: 10px;
+            color: #2d3e50;
+        }
+
+        footer {
+            padding: 20px;
+            color: white;
+            background-color: #2d3e50;
+
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 1200px) {
+            main {
+                flex-flow: column nowrap;
+            }
+
+            main aside {
+                align-self: center;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            nav ul {
+                justify-content: center;
+            }
+
+            main aside {
+                align-self: stretch;
+            }
+
+            .gallery-item {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .gallery-item .text,
+            .gallery-item .featured-image {
+                width: 100%;
+            }
+        }
+
+        .to-top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #2d3e50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .to-top-btn:hover {
+            background-color: #00a2c6;
+        }
+    </style>
 </head>
 
 <body>
@@ -125,7 +415,7 @@
                         </div>
                     </li>
                 </ul>
-                
+
             </article>
 
             <article id="gallery" class="card">
@@ -144,7 +434,7 @@
                                 kolaboratif, persahabatan, dan dedikasi kami dalam mengejar impian kami di dunia
                                 teknologi.</p>
                         </div>
-                        <img src="assets/img/f-kelas.jpg" alt="Foto Bersama di Kelas" class="featured-image">
+                        <img src="assets/img/foto-kelas.jpg" alt="Foto Bersama di Kelas" class="featured-image">
                     </div>
 
                     <div class="gallery-item">
@@ -157,7 +447,7 @@
                                 pengalaman baru yang sangat langka, mulai dari survival, navigasi darat, dan banyak
                                 lainnya.</p>
                         </div>
-                        <img src="assets/img/f-tripala.jpg" alt="Foto Tripala" class="featured-image">
+                        <img src="assets/img/foto-tripala.jpg" alt="Foto Tripala" class="featured-image">
                     </div>
 
                     <div class="gallery-item">
@@ -170,7 +460,7 @@
                                 keamanan, mengidentifikasi kerentanan, dan memberikan rekomendasi untuk meningkatkan
                                 keamanan sistem informasi.</p>
                         </div>
-                        <img src="assets/img/f-sertif.jpg" alt="Sertifikat CySec" class="featured-image">
+                        <img src="assets/img/foto-sertifikat.jpg" alt="Sertifikat CySec" class="featured-image">
                     </div>
                 </section>
             </article>
@@ -222,13 +512,19 @@
                 <h2>Contact Me</h2>
                 <p>Jangan ragu untuk menghubungi saya melalui email atau melalui media sosial saya:</p>
                 <ul>
-                    <li><a href="https://www.instagram.com/toti.ard_" target="_blank"><i class="fa-brands fa-instagram fa-bounce"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/toti-ardiansyah-00278623b" target="_blank"><i class="fa-brands fa-linkedin fa-bounce"></i></a></li>
-                    <li><a href="https://www.youtube.com/@totiard" target="_blank"><i class="fa-brands fa-youtube fa-bounce"></i></a></li>
-                    <li><a href="https://www.facebook.com/IZZA009" target="_blank"><i class="fa-brands fa-facebook fa-bounce"></i></a></li>
-                    <li><a href="https://github.com/totiard" target="_blank"><i class="fa-brands fa-github fa-bounce"></i></a>
+                    <li><a href="https://www.instagram.com/toti.ard_" target="_blank"><i
+                                class="fa-brands fa-instagram fa-bounce"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/toti-ardiansyah-00278623b" target="_blank"><i
+                                class="fa-brands fa-linkedin fa-bounce"></i></a></li>
+                    <li><a href="https://www.youtube.com/@totiard" target="_blank"><i
+                                class="fa-brands fa-youtube fa-bounce"></i></a></li>
+                    <li><a href="https://www.facebook.com/IZZA009" target="_blank"><i
+                                class="fa-brands fa-facebook fa-bounce"></i></a></li>
+                    <li><a href="https://github.com/totiard" target="_blank"><i
+                                class="fa-brands fa-github fa-bounce"></i></a>
                     </li>
-                    <li><a href="mailto:totiardiansyah871@gmail.com" target="_blank"><i class="fa-solid fa-envelope fa-bounce"></i></a></li>
+                    <li><a href="mailto:totiardiansyah871@gmail.com" target="_blank"><i
+                                class="fa-solid fa-envelope fa-bounce"></i></a></li>
                 </ul>
             </article>
         </aside>
@@ -238,6 +534,12 @@
     <footer>
         <p>Belajar Dasar Pemrograman Web &#169; 2024, Develop by Toti Ardiansyah</p>
     </footer>
+    <button id="toTopBtn" class="to-top-btn">
+        <i class="fa-solid fa-arrow-up fa-flip"></i>
+    </button>
+
+    <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
