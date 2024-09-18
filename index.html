@@ -538,7 +538,24 @@
         <i class="fa-solid fa-arrow-up fa-flip"></i>
     </button>
 
-    <script src="assets/js/script.js"></script>
+    <script>
+        const toTopBtn = document.getElementById("toTopBtn");
+
+        window.onscroll = function () {
+            if (
+                document.body.scrollTop > 200 ||
+                document.documentElement.scrollTop > 200
+            ) {
+                toTopBtn.style.display = "block";
+            } else {
+                toTopBtn.style.display = "none";
+            }
+        };
+
+        toTopBtn.onclick = function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+    </script>
 
 </body>
 
